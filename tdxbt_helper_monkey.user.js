@@ -1,6 +1,8 @@
 // ==UserScript==
 // @name         TDXBT Helper Monkey
-// @namespace    http://tampermonkey.net/
+// @namespace    https://github.com/ccgthree/tdxbt_helper_monkey
+// @downloadURL  https://github.com/ccgthree/tdxbt_helper_monkey/raw/main/tdxbt_helper_monkey.user.js
+// @updateURL    https://github.com/ccgthree/tdxbt_helper_monkey/raw/main/tdxbt_helper_monkey.user.js
 // @version      1.0
 // @description  TDXBT Helper Monkey opens your BeyondTrust rep console when generating a new support session in TeamDynamix.
 // @author       Coe Gwathney <ccg0023@uah.edu>
