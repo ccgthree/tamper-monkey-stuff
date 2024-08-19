@@ -12,6 +12,16 @@
 
 if ( document.location.href.includes("TicketDet?") ) {
     var flagStatus = document.getElementById("btnToggleFlag");
+    
+    var flagSpan = document.createElement("span");
+    flagSpan.classList("fa","fa-flag");
+    flagSpan.style.fontSize("2em");
+    flagSpan.style.color("red");
+
+    var statusContainer = document.getElementsByClassName("col-sm-3")[0];
+    statusContainer.appendChild(flagSpan);
+
+    //<span class="fa fa-flag" style="font-size:2em; color:red;"></span>
 
     let newNav = document.createElement("li");
     newNav.id = "flagToggle";
