@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         TDX Flagger
-// @version      2.0
+// @version      1.0
 // @description  Adds a button to the TDX Ticket detail page to flag a ticket.
 // @author       Coe Gwathney - https://github.com/ccgthree
 // @match        https://uah.teamdynamix.com/TDNext/*
