@@ -13,13 +13,18 @@
 if ( document.location.href.includes("TicketDet?") ) {
     var flagStatus = document.getElementById("btnToggleFlag");
     
-    var flagSpan = document.createElement("span");
-    flagSpan.classList("fa","fa-flag");
-    flagSpan.style.fontSize("2em");
+    let flagSpan = document.createElement("span");
+    flagSpan.classList.add("fa");
+    flagSpan.classList.add("fa-flag");
+    flagSpan.style.fontSize.at("2em");
     flagSpan.style.color("red");
 
-    var statusContainer = document.getElementsByClassName("col-sm-3")[0];
-    statusContainer.appendChild(flagSpan);
+    let statusContainer = document.getElementsByClassName("col-sm-3")[0];
+    
+    if ( flagStatus == "Unflag" ) {
+        statusContainer.appendChild(flagSpan);
+    }      
+
 
     //<span class="fa fa-flag" style="font-size:2em; color:red;"></span>
 
