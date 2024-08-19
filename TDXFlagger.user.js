@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         TDX Flagger
-// @version      1.0
+// @version      1.1
 // @updateURL    https://github.com/ccgthree/tamper-monkey-stuff/raw/main/TDXFlagger.user.js
 // @downloadURL  https://github.com/ccgthree/tamper-monkey-stuff/raw/main/TDXFlagger.user.js
 // @description  Adds a button to the TDX Ticket detail page to flag a ticket.
