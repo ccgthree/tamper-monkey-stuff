@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         TDX Flagger
-// @version      2.1
+// @version      2.2
 // @updateURL    https://github.com/ccgthree/tamper-monkey-stuff/raw/main/TDXFlagger.user.js
 // @downloadURL  https://github.com/ccgthree/tamper-monkey-stuff/raw/main/TDXFlagger.user.js
 // @description  Adds a button to the TDX Ticket detail page to flag a ticket.
@@ -16,15 +16,14 @@ if ( document.location.href.includes("TicketDet?") ) {
     let flagSpan = document.createElement("span");
     flagSpan.classList.add("fa");
     flagSpan.classList.add("fa-flag");
-    flagSpan.style.fontSize.at("2em");
-    flagSpan.style.color("red");
+    flagSpan.style.fontSize = "2em";
+    flagSpan.style.color = "red";
 
     let statusContainer = document.getElementsByClassName("col-sm-3")[0];
     
-    if ( flagStatus == "Unflag" ) {
+    if ( flagStatus.innerText == "Unflag" ) {
         statusContainer.appendChild(flagSpan);
     }      
-
 
     //<span class="fa fa-flag" style="font-size:2em; color:red;"></span>
 
