@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TDX GimmeButton
 // @description  Adds a button to the TDX Ticket detail page to grab ticket. It literally only saves one click. I dunno why I made this, but I did and I use it. Shut up.
-// @version      1.0
+// @version      2.0
 // @updateURL    https://github.com/ccgthree/tamper-monkey-stuff/raw/main/TDXGimmeButton.user.js
 // @downloadURL  https://github.com/ccgthree/tamper-monkey-stuff/raw/main/TDXGimmeButton.user.js
 // @author       Coe Gwathney - https://github.com/ccgthree
