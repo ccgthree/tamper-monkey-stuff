@@ -33,11 +33,23 @@ if ( document.location.href.includes("TicketDet?") ) {
 
     let buttonContent;
 
-    buttonContent = '<button id="btnFlag" type="button" aria-label="FlagThis" class="btn btn-info btn-sm" aria-expanded="false" onclick="__doPostBack(\'btnToggleFlag\',\'\');" title="' + flagStatus.innerText + '"><span class="fa-solid fa-flag fa-nopad" aria-hidden="true"></span><span class="padding-left-xs">' + flagStatus.innerText + '</span></button>';
+    let flagButton = document.createElement("button");
+    flagButton.id = "btnFlag";
+    flagButton.type = "button";
+    flagButton.className = "btn btn-info btn-sm";
+    flagButton.onclick = function() {
+        __doPostBack('btnToggleFlag','');
+        location.reload();
+    }
+    flagButton.title = flagStatus.innerText;
+    flagButton.innerHTML = '<span class="fa-solid fa-flag fa-nopad" aria-hidden="true"></span><span class="padding-left-xs">' + flagStatus.innerText + '</span>';
 
-    console.log(buttonContent);
 
-    newNav.innerHTML = buttonContent;
+    //buttonContent = '<button id="btnFlag" type="button" aria-label="FlagThis" class="btn btn-info btn-sm" aria-expanded="false" onclick="__doPostBack(\'btnToggleFlag\',\'\');" title="' + flagStatus.innerText + '"><span class="fa-solid fa-flag fa-nopad" aria-hidden="true"></span><span class="padding-left-xs">' + flagStatus.innerText + '</span></button>';
+
+    //newNav.innerHTML = buttonContent;
+
+    newNav.appendChild(flagButton);
 
     document.getElementsByClassName("nav nav-pills pull-left padding-top-xs padding-left")[0].appendChild(newNav);
     //document.getElementById("flagToggle").appendChild(newButtonInnards);
