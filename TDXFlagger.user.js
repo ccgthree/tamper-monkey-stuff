@@ -39,7 +39,9 @@ if ( document.location.href.includes("TicketDet?") ) {
     flagButton.className = "btn btn-info btn-sm";
     flagButton.onclick = function() {
         __doPostBack('btnToggleFlag','');
-        location.reload();
+        setTimeout(() => {
+            location.reload()
+        }, 1000);
     }
     flagButton.title = flagStatus.innerText;
     flagButton.innerHTML = '<span class="fa-solid fa-flag fa-nopad" aria-hidden="true"></span><span class="padding-left-xs">' + flagStatus.innerText + '</span>';
