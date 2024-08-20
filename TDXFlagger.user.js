@@ -31,7 +31,7 @@ if ( document.location.href.includes("TicketDet?") ) {
     newNav.id = "flagToggle";
     newNav.class = "btn-group";
 
-    let buttonContent;
+    //let buttonContent;
 
     let flagButton = document.createElement("button");
     flagButton.id = "btnFlag";
