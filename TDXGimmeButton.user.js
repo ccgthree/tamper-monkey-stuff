@@ -20,15 +20,34 @@ if ( document.location.href.includes("TicketDet?") ) {
 
     let buttonContent;
 
-    if ( responsible.includes(nameString) ) {
-        buttonContent = '<button id="btnTake" type="button" aria-label="Take" class="btn btn-danger btn-sm" aria-expanded="false" style="background-color:grey!important;" onclick="" title="Take Ticket"><span class="fa-solid fa-handshake fa-nopad" aria-hidden="true"></span><span class="padding-left-xs">Take Ticket</span></button>';
-        } else {
-        buttonContent = '<button id="btnTake" type="button" aria-label="Take" class="btn btn-danger btn-sm" aria-expanded="false" onclick="__doPostBack(\'btnTakeTicket\',\'\');" title="Take Ticket"><span class="fa-solid fa-handshake fa-nopad" aria-hidden="true"></span><span class="padding-left-xs">Take Ticket</span></button>';
+    let gimmeButton = document.createElement("button");
+    gimmeButton.id = "btnTake";
+    gimmeButton.type = "button";
+    gimmeButton.className = "btn btn-danger btn-sm";
+    gimmeButton.onclick = "";
+    gimmeButton.style.setProperty('background-color','grey','important');
+    gimmeButton.title = "Take Ticket";
+    gimmeButton.innerHTML = '<span class="fa-solid fa-handshake fa-nopad" aria-hidden="true"></span><span class="padding-left-xs">Take Ticket</span>'
+
+    if ( !responsible.includes(nameString) ) {
+        gimmeButton.onclick = function() {
+            __doPostBack('btnTakeTicket','');
+            setTimeout(() => {
+                location.reload()
+            }, 1000);
+        }
+        gimmeButton.style.setProperty('background-color','#bf3935','important');
     }
 
-    console.log(buttonContent);
+    // if ( responsible.includes(nameString) ) {
+    //     buttonContent = '<button id="btnTake" type="button" aria-label="Take" class="btn btn-danger btn-sm" aria-expanded="false" style="background-color:grey!important;" onclick="" title="Take Ticket"><span class="fa-solid fa-handshake fa-nopad" aria-hidden="true"></span><span class="padding-left-xs">Take Ticket</span></button>';
+    //     } else {
+    //     buttonContent = '<button id="btnTake" type="button" aria-label="Take" class="btn btn-danger btn-sm" aria-expanded="false" onclick="__doPostBack(\'btnTakeTicket\',\'\');" title="Take Ticket"><span class="fa-solid fa-handshake fa-nopad" aria-hidden="true"></span><span class="padding-left-xs">Take Ticket</span></button>';
+    // }
 
-    newNav.innerHTML = buttonContent;
+    //newNav.innerHTML = buttonContent;
+
+    newNav.appendChild(gimmeButton);
 
     document.getElementsByClassName("nav nav-pills pull-left padding-top-xs padding-left")[0].appendChild(newNav);
     //document.getElementById("takeTicket").appendChild(newButtonInnards);
