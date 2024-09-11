@@ -10,7 +10,7 @@
 // @grant        none
 // ==/UserScript==
 
-if ( document.location.href.includes("TicketDet?") ) {
+if ( document.location.href.includes("TicketDet") ) {
     var nameString = "Gwathney";
     var responsible = document.getElementById("upResponsibility").innerText;
 
