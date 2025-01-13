@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TDX Update Actions
-// @description  Adds action buttons to the ticket update page on TeamDynamix
-// @version      1.0
+// @description  Adds a button to the TDX Ticket detail page to grab ticket. It literally only saves one click. I dunno why I made this, but I did and I use it. Shut up.
+// @version      1.1
 // @author       Coe Gwathney - https://github.com/ccgthree
 // @match        https://uah.teamdynamix.com/TDNext/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=teamdynamix.com
@@ -9,6 +9,8 @@
 // @run-at       document-idle
 
 // ==/UserScript==
+
+// Need a small, 500ms timeout to allow the DOM to finish loading.
 setTimeout(function(){
 
 if ( document.location.href.includes("Update?") ) {
@@ -23,6 +25,8 @@ if ( document.location.href.includes("Update?") ) {
         let statusMenu = document.getElementById("NewStatusId");
         let updateBody = document.getElementsByTagName("iframe")[0].contentWindow.document.getElementsByTagName("body")[0];
         statusMenu.value = statusOptions[menuChoice];
+        let existingText = updateBody.innerText
+        if ( updateBody.innerText.length > 1 ) { bodyText = existingText + '\n' + bodyText };
         updateBody.innerText = bodyText;
         //document.getElementById("NewStatusId").value = statusOptions[menuChoice];
         //document.getElementsByClassName("cke_editable")[0].innerText = bodyText;
