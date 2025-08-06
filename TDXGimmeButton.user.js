@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TDX GimmeButton
 // @description  Adds a button to the TDX Ticket detail page to grab ticket. It literally only saves one click. I dunno why I made this, but I did and I use it. Shut up.
-// @version      2.0
+// @version      2.1
 // @updateURL    https://github.com/ccgthree/tamper-monkey-stuff/raw/main/TDXGimmeButton.user.js
 // @downloadURL  https://github.com/ccgthree/tamper-monkey-stuff/raw/main/TDXGimmeButton.user.js
 // @author       Coe Gwathney - https://github.com/ccgthree
@@ -25,7 +25,8 @@ if ( document.location.href.includes("TicketDet") ) {
     gimmeButton.type = "button";
     gimmeButton.className = "btn btn-danger btn-sm";
     gimmeButton.onclick = "";
-    gimmeButton.style.setProperty('background-color','grey','important');
+    //gimmeButton.style.setProperty('background-color','grey','important');
+    gimmeButton.style.setProperty('color','grey','important');
     gimmeButton.title = "Take Ticket";
     gimmeButton.innerHTML = '<span class="fa-solid fa-handshake fa-nopad" aria-hidden="true"></span><span class="padding-left-xs">Take Ticket</span>'
 
@@ -36,7 +37,8 @@ if ( document.location.href.includes("TicketDet") ) {
                 location.reload()
             }, 1000);
         }
-        gimmeButton.style.setProperty('background-color','#bf3935','important');
+        //gimmeButton.style.setProperty('background-color','#bf3935','important');
+        gimmeButton.style.setProperty('color','#bf3935','important');
     }
 
     // if ( responsible.includes(nameString) ) {
